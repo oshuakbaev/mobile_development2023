@@ -19,10 +19,12 @@ class Collegue extends Human{
 
 class Professor extends Collegue{
     int? course; 
+    var Student_list = {"Student":"dicpiline"};
     // Student myStudent = new Student(); 
     Professor({String? name, int? age, int? weight, int? height, int? day_of_birth, int? month_of_birth, int? year_of_birth, String? address, 
-    int? salary, int? date_connection, int? work_exp, int? this.course}): super(name: name, age: age, weight: weight, height: height, 
+    int? salary, int? date_connection, int? work_exp, int? this.course, var this.Student_list = const}): super(name: name, age: age, weight: weight, height: height, 
     day_of_birth: day_of_birth, month_of_birth: month_of_birth, year_of_birth: year_of_birth, address: address,work_exp:work_exp,salary:salary);
+
 }
 
 class Student extends Human{
@@ -96,7 +98,9 @@ void main(){
     address: "123 Main St", 
     work_exp:5, 
     salary:5000,
-    course:5
+    course:5,
+    Student_list:{"Shuakbayev":"Algo",
+                  "Bakdauletov": "mobile"}
     );
 
     print("\nName: ${Kosnikov.name}");
@@ -108,6 +112,7 @@ void main(){
     print("Work experience: ${Kosnikov.work_exp}");
     print("Salary:${Kosnikov.salary}");
     print("Course: ${Kosnikov.course}");
+    print("Students and discipline: ${Kosnikov.Student_list}");
 
 
 }
