@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.black),
       home: Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
             title: Text("oshuakbayev flutter"),
             centerTitle: true,
