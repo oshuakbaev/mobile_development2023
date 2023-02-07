@@ -1,36 +1,37 @@
 bool HuppyNumber(List<int> number){
-    int a = number[0];
-    bool flag = true;
+     int start = 0,end = number.length-1;
+    int middle = (start+end)~/2;
 
-    for(int i=0;i<number.length;i++){
-        if(number[i]==a){
-            flag = true;        
-        }else{
-            flag = false;
-            break; 
-        }
+    int? first_number,second_number;
+
+    while(start<middle){
+        first_number=number[start]+number[start+1];
+        start++; 
     }
-
-    return flag; 
+    while(middle<end){
+        second_number=number[middle]+number[middle+1];
+        middle++; 
+    }
+    if(first_number==second_number){
+      return true;
+    }else{
+      return false; 
+    }
 }
 
 
 void main(){
 
-    String number = "1111"; 
+    String number = "11111111"; 
     List<int> list = List<int>.from(number.split('').map(int.parse));
 
-    int length = number.length;
 
-    for(int i=0;i<length;i++){
-        list.add(int.parse(number[i]));
-    }
-
-    // print(HuppyNumber(list));
+   // print(HuppyNumber(list));
 
     if(HuppyNumber(list)==true){
         print("It's a happy number!");
     }else{
         print("Sad. It's not a happy number:("); 
     }
+//   print(list);
 }
