@@ -1,29 +1,20 @@
-bool HuppyNumber(List<int> number){
-     int start = 0,end = number.length-1;
-    int middle = (start+end)~/2;
+import 'dart:io';
 
-    int? first_number,second_number;
-
-    while(start<middle){
-        first_number=number[start]+number[start+1];
-        start++; 
-    }
-    while(middle<end){
-        second_number=number[middle]+number[middle+1];
-        middle++; 
-    }
-    if(first_number==second_number){
-      return true;
-    }else{
-      return false; 
-    }
+bool HuppyNumber(List<int> number) {
+  int middle = number.length ~/ 2;
+  int firstSum = number.sublist(0, middle).reduce((a, b) => a + b);
+  int secondSum = number.sublist(middle).reduce((a, b) => a + b);
+  //reduce is the sum 
+  return firstSum == secondSum;
 }
+
 
 
 void main(){
 
-    String number = "11111111"; 
-    List<int> list = List<int>.from(number.split('').map(int.parse));
+    String? number = stdin.readLineSync(); 
+
+    List<int> list = List<int>.from(number?.split('')?.map(int.parse) ?? []);
 
 
    // print(HuppyNumber(list));

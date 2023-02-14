@@ -1,3 +1,5 @@
+import 'dart:io';
+
 void changeNumber(int a, int b,int c,int d){
     int a1 = a;
 
@@ -14,10 +16,21 @@ void changeNumber(int a, int b,int c,int d){
 
 
 void main(){
-
-    int a = 1,b = 2,c = 3,d = 4;
+    print("a: ");
+    String? a = stdin.readLineSync();
+    int a_1 = int.parse(a!);
+    print("b: ");
+    String? b = stdin.readLineSync();
+    int b_1 = int.parse(b!);
+    print("c: ");
+    String? c = stdin.readLineSync();
+    int c_1 = int.parse(c!);
+    print("d: ");
+    String? d = stdin.readLineSync(); 
+    int d_1 = int.parse(d!);
+    // int a = 1,b = 2,c = 3,d = 4;
     
-    changeNumber(a,b,c,d); 
+    changeNumber(a_1,b_1,c_1,d_1); 
 
 
 }
