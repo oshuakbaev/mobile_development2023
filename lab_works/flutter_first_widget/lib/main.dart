@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget{
               fontSize: 50,
               color: Colors.blueAccent,
               fontFamily: 'Times New Roman',
+            ),),
             ),)
-        ),
-      ),
-    );
+
+        );
   }
 
 }
