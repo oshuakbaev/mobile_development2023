@@ -45,10 +45,11 @@ android {
         versionName flutterVersionName
 
 <<<<<<< HEAD
-        ndkVersion '25.2.9519653@'
+        def var = ndkVersion '25.2.9519653'
 =======
         ndkVersion '25.2.9519653'
 >>>>>>> f6ddfacd4be577c507d563c958a45186af3c109b
+        var
     }
 
     buildTypes {
