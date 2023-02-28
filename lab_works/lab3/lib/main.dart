@@ -17,10 +17,10 @@ class _MyStateApp extends State<MyApp>{
   static const double sieze02 = 25.0;
   List<Color> tus = [Colors.green, Colors.yellow, Colors.orange, Colors.blue];
 
-  @override
-  Widget build(BuildContext context){
-    return MaterialApp(
-      home: Scaffold(
+  DefaultTabController(
+  initialIndex: 1,  //optional, starts from 0, select the tab by default
+  length:3,
+  child: Scaffold(
         appBar: AppBar(
           title: Text(
               "lab3 oshuakbayev"
@@ -99,3 +99,5 @@ class _MyStateApp extends State<MyApp>{
     );
   }
 }
+),
+),

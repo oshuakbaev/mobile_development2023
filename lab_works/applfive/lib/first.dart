@@ -11,7 +11,13 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.lightBlue, title: const Text("Неважно")),
+          backgroundColor: Colors.lightBlue, title: const Text("Неважно"),
+        bottom: const TabBar(tabs: [
+          Tab(icon: Icon(Icons.announcement)),
+          Tab(icon: Icon(Icons.ice_skating)),
+          Tab(icon: Icon(Icons.cloud)),
+        ]),
+      ),
       drawer: Drawer(
           width: 150,
           backgroundColor: Colors.greenAccent,
@@ -23,18 +29,8 @@ class FirstScreen extends StatelessWidget {
             Divider(),
             Text("что ты!!!")
           ])),
-      body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const Second()));
-            }, child: Text("Туда")),
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const Second()));
-            }, child: Text("Сюда")),
-          ],
-        ),
-      ),
+
+
     );
   }
 }

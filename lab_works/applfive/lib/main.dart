@@ -16,7 +16,30 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FirstScreen(),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.lightBlue, title: const Text("Неважно"),
+          controller: _tabController,
+          bottom: const TabBar(tabs: [
+            Tab(icon: Icon(Icons.announcement)),
+            Tab(icon: Icon(Icons.ice_skating)),
+            Tab(icon: Icon(Icons.cloud)),
+          ]),
+        ),
+        body: Center(
+          child: Column(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const Second()));
+              }, child: Text("Туда")),
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const Second()));
+              }, child: Text("Сюда")),
+            ],
+          ),
+        ),
+      ),
+
     );
   }
 }
