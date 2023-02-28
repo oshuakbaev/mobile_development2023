@@ -188,25 +188,7 @@ void main() {
   print("Date connection: ${Adlet.date_connection}");
   print("Work experience: ${Adlet.work_exp}");
 
-  // Student Zhambo = new Student(
-  // name: "Zhambo",
-  // age: 21,
-  // weight: 70,
-  // height: 180,
-  // day_of_birth: 1,
-  // month_of_birth: 1,
-  // year_of_birth: 2000,
-  // address: "123 Main St",
-  // list_points: [88, 77, 89],
-  // list_subj: ["algo", "smalgo"]
-  // );
 
-  // I dont know it gives me an error such like
-  // test.dart:68:33: Error: Too few positional arguments: 10 required, 0 given.
-  //     Student Zhambo = new Student(
-  //                                 ^
-  // test.dart:36:5: Context: Found this candidate, but the arguments don't match.
-  //     Student(String? name, int? age, int? weight, int? height, int? day_of_birth, int? month_of_birth, int? year_of_birth, String? address,
 
   Professor Kosnikov = new Professor(
       name: "Vyacheslav",
