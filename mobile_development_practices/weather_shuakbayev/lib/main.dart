@@ -78,7 +78,8 @@ class WeatherState extends State<Weather>{
                   items: cities.map((String city) {
                     return DropdownMenuItem<String>(
                       value: city,
-                      child: Text(city),
+                      child: Text(
+                          city),
                     );
                   }).toList(),
                 ),
@@ -87,9 +88,10 @@ class WeatherState extends State<Weather>{
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      city,
+                      selectedCity ?? 'Almaty',
                       style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.lightBlue),
                     ),
+
 
                     weatherIcon.isEmpty
                         ? CircularProgressIndicator()
