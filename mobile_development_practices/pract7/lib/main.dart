@@ -37,14 +37,26 @@ class ControlState extends State<Control>{
         title: Text("Firebase!"),
         centerTitle: true,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: (){
-            databaseReference.child('message').set('Привет, Андрей!');
+      // body: Center(
+      //   child: ElevatedButton(
+      //     onPressed: (){
+      //       databaseReference.child('message').set('Привет, ОЛжас!');
+      //     },
+      //     child: Text('Загрузить'),
+      //   ),
+      // ),
+      body: Column(children: [
+        TextFormField(
+            decoration: InputDecoration(
+            labelText: 'Enter your name',
+            hintText: 'John Doe',
+          ),
+          onChanged: (value) {
+                databaseReference.child('message').set(value);
           },
-          child: Text('Загрузить'),
-        ),
-      ),
+        )
+
+      ]),
     );
   }
 }
