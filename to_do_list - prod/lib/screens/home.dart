@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:to_do_list/constants/colors.dart';
 import 'package:to_do_list/widget/todo_item.dart';
 import 'package:to_do_list/model/todo.dart';
+import 'package:to_do_list/accounts/account.dart';
 
 class Home extends StatefulWidget{
   Home({Key? key}) : super (key: key);
@@ -26,6 +27,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: tdBGColor,
       appBar: _buildAppBar(),
+      drawer: _buildDrawer(context),
       body: Stack(
         children:[
         Container(
@@ -164,7 +166,7 @@ class _HomeState extends State<Home> {
               maxHeight: 20,
               minWidth: 25),
           border: InputBorder.none,
-          hintText: 'Search',
+          hintText: 'издеу',
           hintStyle:TextStyle(color: tdGrey),
         ),
       ),
@@ -175,15 +177,47 @@ class _HomeState extends State<Home> {
     return AppBar(
       elevation: 0,
       backgroundColor: tdBGColor,
-      title: Row(
-        children: [
-          Icon(
-            Icons.menu,
-            color: tdBlack,
-            size: 30,
+      iconTheme: IconThemeData(color: Colors.black),
+      );
+  }
+
+  Widget _buildDrawer(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.purpleAccent,
+            ),
+            child: Text(
+              'Меню',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+              ),
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.account_circle),
+            title: Text('Account'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AccountPage()),
+              );
+            },
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text('Setting'),
           ),
         ],
       ),
     );
   }
+
 }
+
+
